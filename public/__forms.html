@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Netlify Forms Schema</title>
+</head>
+<body>
+    <!--
+      Hidden form that lets Netlify detect the "calculator_logs" form at build
+      time. It keeps a backup copy of every captured lead (including whether
+      Salesforce accepted it) under Netlify > Forms > calculator_logs.
+    -->
+    <form name="calculator_logs" netlify netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="calculator_logs" />
+        <input type="text" name="bot-field" />
+
+        <input type="text" name="calculationId" />
+        <input type="text" name="action" /> <!-- 'Lead Captured' or 'Recalculation' -->
+        <input type="text" name="timestamp" />
+        <input type="text" name="crmStatus" /> <!-- ok | failed | skipped | not_needed -->
+
+        <input type="text" name="firstName" />
+        <input type="text" name="lastName" />
+        <input type="email" name="email" />
+        <input type="text" name="hospitalName" />
+        <input type="text" name="jobTitle" />
+
+        <input type="text" name="chemoChairs" />
+        <input type="text" name="oncologists" />
+        <input type="text" name="beds" />
+        <input type="text" name="edVisits" />
+        <input type="text" name="state" />
+        <input type="text" name="is340B" />
+
+        <input type="text" name="totalSavings" />
+        <input type="text" name="additionalRevenue" />
+        <input type="text" name="hospitalSavings" />
+    </form>
+</body>
+</html>
